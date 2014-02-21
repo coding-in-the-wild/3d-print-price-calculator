@@ -1,0 +1,20 @@
+{
+  "name": "3d-print-price-calculator",
+  "version": "0.0.0",
+  "main": "./index.js",
+  "author": {
+    "name": "pwnate",
+    "email": "me@davisnathan.com"
+  },
+  "description": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coding-in-the-wild/3d-print-price-calculator"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "xtend": "~2.1.2"
+  }
+}
