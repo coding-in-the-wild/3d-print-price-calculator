@@ -1,22 +1,37 @@
 module.exports = {
 	FFF: {
 		ABS: {
-			white: 1.05,
-			black: 1.05,
-			grey: 1.05,
-			navyBlue: 1.05,
-			red: 1.05
+			white: 0.75,
+			black: 0.75,
+			grey: 0.75,
+			navyBlue: 0.75,
+			red: 0.75,
+			natural: 0.75,
+			silver: 0.80
 		},
-		NYL: {
-			natural: 1.20
-		}
+		infillDiscount: 0.2,
+		infillDiscountThreshhold: 50,
+		layerResolutionDiscount: {
+			'0.1': 0,
+			'0.2': 0.05,
+			'0.3': 0.1
+		},
+		basePrice: 5
 	},
-	infillDiscount: 0.2,
-	infillDiscountThreshhold: 50,
-	layerResolutionDiscount: {
-		'0.1': 0,
-		'0.2': 0.05,
-		'0.3': 0.1
-	},
-	minimumPrice: 5
+
+
+	SLA: {
+		'Acrylic Resin': {
+			white: 0.95,
+			black: 0.95
+		},
+		infillDiscount: 0,
+		infillDiscountThreshhold: 0,
+		layerResolutionDiscount: {
+			'0.1': 0,
+			'0.2': 0.05,
+			'0.3': 0.1
+		},
+		basePrice: 10
+	}
 }

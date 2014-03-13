@@ -1,27 +1,25 @@
 var xtend = require('xtend')
 var priceCalculator = require('./priceCalculator.js')
+var defaultPrintOptions = require('./defaultPrintOptions.js')
 
-module.exports = function getPrice(pricing,defaultPrintOptions,printOptions,admeshOutput) {
+module.exports = function getPrice(printOptions,admeshOutput) {
 	var printOptions = xtend(defaultPrintOptions,printOptions)
 
-	try{
-		//make sure percentages are numbers and between 0 and 100
-		if(!(printOptions.percentInfill >= 0) || !(printOptions.percentInfill <= 100) ||
-			!(pricing.infillDiscountThreshhold >= 0) || !(pricing.infillDiscountThreshhold <= 100)){
-			return -1
-		}
-
-		if(printOptions.units == "mm"){
-			var result = priceCalculator(pricing,printOptions,admeshOutput.volume)
-			return (isNaN(result) ? -1 : result)
-		} else if(printOptions.units == "in"){
-			var result = priceCalculator(pricing,printOptions,admeshOutput.volume * 16387.064)
-			return (isNaN(result) ? -1 : result)
-		} else {
-			return -1
-		}
+	//make sure percentages are numbers and between 0 and 100
+	if (isNaN(printOptions.percentInfill) || printOptions.percentInfill < 0 || printOptions.percentInfill > 100){
+		throw new Error('invalid percent infill: ' + printOptions.percentInfill)
 	}
-	catch(err) {
-		return -1
+
+	//make sure admeshOutput has volume
+	if (typeof admeshOutput.volume === 'undefined') {
+		throw new Error('undefined admesh volume: ' + admeshOutput.volume)
+	}
+
+	if (printOptions.units == "mm"){
+		return priceCalculator(printOptions,admeshOutput.volume)
+	} else if (printOptions.units == "in"){
+		return priceCalculator(printOptions,admeshOutput.volume * 16387.064)
+	} else {
+		throw new Exrror('invalid print option units: ' + printOptions.units)
 	}
 }
