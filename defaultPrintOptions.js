@@ -1,5 +1,5 @@
 module.exports = {
-	method: 'FFF',
+	printer: 'FFF',
 	material: 'ABS',
 	color: 'white',
 	units: 'mm',
