@@ -20,6 +20,6 @@ module.exports = function getPrice(printOptions,admeshOutput) {
 	} else if (printOptions.units == "in"){
 		return priceCalculator(printOptions,admeshOutput.volume * 16387.064)
 	} else {
-		throw new Exrror('invalid print option units: ' + printOptions.units)
+		throw new Error('invalid print option units: ' + printOptions.units)
 	}
 }
