@@ -1,7 +1,7 @@
 {
   "name": "3d-print-price-calculator",
-  "version": "0.0.0",
-  "main": "./index.js",
+  "version": "0.0.1",
+  "main": "./getPrice.js",
   "author": {
     "name": "pwnate",
     "email": "me@davisnathan.com"

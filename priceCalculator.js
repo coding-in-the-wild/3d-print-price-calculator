@@ -3,7 +3,7 @@ var pricing = require('./pricing.js')
 module.exports = function calculator(printOptions,volume) {
 	// make sure printer type is defined in pricing object
 	if (typeof pricing[printOptions.printer] === 'undefined') {
-    	throw new Error('invalid printer type: ' + printOptions.printer)
+		throw new Error('invalid printer type: ' + printOptions.printer)
 	}
 
 	// just to make things simpler
@@ -11,9 +11,9 @@ module.exports = function calculator(printOptions,volume) {
 	
 	// make sure material and color is defined in pricing object
 	if (typeof printerPricing[printOptions.material] === 'undefined') {
-    	throw new Error('invalid print material for printer type: ' + printOptions.material)
+		throw new Error('invalid print material for printer type: ' + printOptions.material)
 	} else if (typeof printerPricing[printOptions.material][printOptions.color] === 'undefined') {
-    	throw new Error('invalid print color for material and printer type: ' + printOptions.color)
+		throw new Error('invalid print color for material and printer type: ' + printOptions.color)
 	}
 
 	// make sure layer resolution discount is defined in pricing object
