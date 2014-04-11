@@ -25,7 +25,7 @@ test("price is right", function (t) {
 
 test("price is right with different options", function(t){
 	//should equal ((volume * pricePerCC * (1 - infillDiscount - layerResolutionDiscount) / 1000)
-	//			 	+ printerPricing.basePrice)
+	//				+ printerPricing.basePrice)
 	t.equal(Math.round(100*priceCalculator({
 		printer:'FFF',
 		material:'ABS',
