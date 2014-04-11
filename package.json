@@ -6,7 +6,7 @@
     "name": "pwnate",
     "email": "me@davisnathan.com"
   },
-  "description": "n/a",
+  "description": "this is a thing that calculates the price of a 3d object given its volume",
   "repository": {
     "type": "git",
     "url": "https://github.com/coding-in-the-wild/3d-print-price-calculator"
